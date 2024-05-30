@@ -19,6 +19,7 @@ if (cluster.isMaster) {
   });
 } else {
   const app = express();
+  app.use(cors());
   app.use(bodyParser.json({ limit: '100mb' }));
   const saveBase64Image = (folderPath, base64Data, ) => {
      const timestamp = Date.now();
